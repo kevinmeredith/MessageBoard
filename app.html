@@ -2,6 +2,7 @@
 <head>
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
   <script src="app.js"></script>
+  <script src="lib/underscore.js"></script>
   <title>
    ang test
   </title>
@@ -11,12 +12,14 @@
   <div ng-controller="MessageBoardCtrl">
    <ul>
    <div ng-repeat='message in messages track by $index'>
-   	<li>{{message}}</li>
+   	<li>{{message}} 
+   		<button ng-click="delete(messages, $index)">Delete</button>
+	</li>   		
    </div>
    </ul>
    <h2>Add New Message</h2>
    <textarea ng-model="msg">"enter new message here"</textarea>
-   <button ng-disabled="!isValid(msg)" ng-click="addMessage(msg)">Add Message</button>
+   <button ng-disabled="!isValid(msg)" ng-click="add(msg)">Add Message</button>
   </div>
 </body>
 </html>

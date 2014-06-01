@@ -11,8 +11,13 @@ myApp.controller("MessageBoardCtrl", function ($scope) {
     	return (typeof msg !== 'undefined');
     }
 
-    $scope.addMessage = function(msg) {
+    $scope.add = function(msg) {
     	$scope.messages = $scope.messages.concat(msg);
+    }
+
+    $scope.delete = function(msgs, i) {
+    	console.log("deleting index: ", i);
+    	msgs.splice(i, 1);
     }
 
 });
