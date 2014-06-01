@@ -8,7 +8,7 @@ myApp.controller("MessageBoardCtrl", function ($scope) {
     $scope.messages = [];
 
     $scope.isValid = function(msg) {
-    	return (typeof msg !== 'undefined');
+    	return (typeof msg !== 'undefined') && msg.trim() !== "";
     }
 
     $scope.add = function(msg) {
