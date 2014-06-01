@@ -4,7 +4,7 @@ var myApp = angular.module('myApp',[]);
 
 myApp.controller("MessageBoardCtrl", function ($scope) {
 
-    $scope.msg;
+    $scope.msg; // TODO: should this be declared since it's 'created' in view?
     $scope.messages = [];
 
     $scope.isValid = function(msg) {
