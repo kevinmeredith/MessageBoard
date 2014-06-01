@@ -19,5 +19,4 @@ myApp.controller("MessageBoardCtrl", function ($scope) {
     	console.log("deleting index: ", i);
     	msgs.splice(i, 1);
     }
-
 });

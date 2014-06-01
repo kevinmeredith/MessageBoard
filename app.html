@@ -11,6 +11,9 @@
   <h1>Message Board</h1>
   <div ng-controller="MessageBoardCtrl">
    <ul>
+   	<div ng-switch on="messages.length">  
+		<span ng-switch-when="0">No messages...</span>
+   	</div>
    <div ng-repeat='message in messages track by $index'>
    	<li>{{message}} 
    		<button ng-click="delete(messages, $index)">Delete</button>
