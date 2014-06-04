@@ -19,4 +19,8 @@ myApp.controller("MessageBoardCtrl", function ($scope) {
     	console.log("deleting index: ", i);
     	msgs.splice(i, 1);
     }
+
+    $scope.printMessages = function() {
+        console.log("$scope.messages:", $scope.messages);
+    }
 });

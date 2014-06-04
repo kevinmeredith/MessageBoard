@@ -14,15 +14,17 @@
    	<div ng-switch on="messages.length">  
 		<span ng-switch-when="0">No messages...</span>
    	</div>
-   <div ng-repeat='message in messages track by $index'>
+   <div ng-repeat='message in messages track by $index'> 
    	<li>{{message}} 
-   		<button ng-click="delete(messages, $index)">Delete</button>
-	</li>   		
+   		<input>{{message}}</input> <!-- does not update real `message` due to     array copying by value -->
+      <button ng-click="delete(messages, $index)">Delete</button>
+	  </li>   		
    </div>
    </ul>
    <h2>Add New Message</h2>
    <textarea ng-model="msg" placeholder="enter new message here"></textarea>
    <button ng-disabled="!isValid(msg)" ng-click="add(msg)">Add Message</button>
+   <button ng-click="printMessages()">Print Messages</button>
   </div>
 </body>
 </html>
